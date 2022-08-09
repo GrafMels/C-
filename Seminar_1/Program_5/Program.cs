@@ -3,9 +3,14 @@
 // 2 -> " -2, -1, 0, 1, 2"
 Console.Write("Введите положительное число:");
 int number = Convert.ToInt32(Console.ReadLine());
+if(number < 0){
+    number = number * (-1);
+} 
 int negativeNumber = number * (-1);
 
-while(negativeNumber <= number){
-    Console.Write(negativeNumber + ", ");
-    negativeNumber++;
-}
+    while(negativeNumber <= number){
+        Console.Write(negativeNumber + ", ");
+        negativeNumber++;
+    }
+
+
