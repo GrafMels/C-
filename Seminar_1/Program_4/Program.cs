@@ -4,11 +4,11 @@
 
 Console.WriteLine("Введите три числа, а я скажу какое больше");
 
-Console.Write("Введите Первое число:");
+Console.Write("Введите Первое число: ");
 int firstNumber = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите Второе число:");
+Console.Write("Введите Второе число: ");
 int secondNumber = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите Третье число:");
+Console.Write("Введите Третье число: ");
 int thirdNumber = Convert.ToInt32(Console.ReadLine());
 
 int max = firstNumber;

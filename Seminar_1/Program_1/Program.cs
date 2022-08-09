@@ -5,10 +5,10 @@
 // a = -3 b = 9 -> нет
 Console.WriteLine("Введите два числа что-бы первое было квадратом второго");
 
-Console.WriteLine("Введите первое число: ");
+Console.Write("Введите первое число: ");
 int firstNumber = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите второе число: ");
+Console.Write("Введите второе число: ");
 int secondNumber = Convert.ToInt32(Console.ReadLine());
 if(firstNumber == secondNumber * secondNumber){
     Console.WriteLine("ДА: Первое число: " + firstNumber + " является квадратом Второго числа: " + secondNumber);
