@@ -4,11 +4,11 @@
 // 12 -> 2
 // 85 -> 8
 int number = new Random().Next(10, 100);
-Console.WriteLine(number);
+Console.WriteLine("Рандомное число: " + number); 
 if((number/10) < (number%10)){
-    Console.WriteLine("Max digit = " + number%10);
+    Console.WriteLine($"Max digit = {number%10}");
 }else if((number/10) > (number%10)){
-    Console.WriteLine("Max digit = " + number/10);
+    Console.WriteLine($"Max digit = {number/10}");
 }else{
-    Console.WriteLine("Both digit are equal = " + number%10);
+    Console.WriteLine($"Both digit are equal = {number%10}");
 }
