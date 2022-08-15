@@ -4,11 +4,11 @@
 //  в которой находится эта точка
 
 Console.Write("Введите значение кординаты оси x: ");
-int x = int.Parse(Console.ReadLine());
+int x = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите значение кординаты оси y: ");
-int y = int.Parse(Console.ReadLine());
+int y = Convert.ToInt32(Console.ReadLine());
 
-if (x > 0 && y > 0) Console.WriteLine("Это первая четверть");
-if (x < 0 && y > 0) Console.WriteLine("Это вторая четверть");
-if (x < 0 && y < 0) Console.WriteLine("Это третья четверть");
-if (x > 0 && y < 0) Console.WriteLine("Это четвёртая четверть");
+if (x > 0 && y > 0) Console.WriteLine("Это I четверть");
+if (x < 0 && y > 0) Console.WriteLine("Это II четверть");
+if (x < 0 && y < 0) Console.WriteLine("Это III четверть");
+if (x > 0 && y < 0) Console.WriteLine("Это IV четверть");
