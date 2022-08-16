@@ -18,4 +18,7 @@ int Yb = Convert.ToInt32(Console.ReadLine());
 
 // очень сложная строчка для того чтобы не вводить 
 // лишние переменные, по факту считает AB = √(xb - xa)2 + (yb - ya)2
-System.Console.WriteLine($"Растояние между точками A и B: {Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2))}");
+Console.WriteLine($"Растояние между точками A и B: {Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2))}");
+Console.WriteLine($"Растояние между точками A и B: {Math.Round(Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2)), 3)}");
+Console.WriteLine($"Растояние между точками A и B: {Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2)):f3}");
+// Примеры разных ввыводов с установленным числом после запятой

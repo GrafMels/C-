@@ -26,9 +26,6 @@ int Yb = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите z точки B: ");
 int Zb = Convert.ToInt32(Console.ReadLine());
 
-// очень сложная строчка для того чтобы не вводить 
-// лишние переменные, по факту считает AB = √(xb - xa)2 + (yb - ya)2 + (zb - za)2
-//Console.WriteLine($"Растояние между точками A и B: {Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2) + Math.Pow(Za - Zb, 2))}");
-Console.WriteLine($"Растояние между точками A и B: {Math.Round(Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2) + Math.Pow(Za - Zb, 2)), 3)}");
-//Console.WriteLine($"Растояние между точками A и B: {Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2) + Math.Pow(Za - Zb, 2)):f3}");
-// Примеры разных ввыводов с установленным числом после запятой
+double result = Math.Round(Math.Sqrt(Math.Pow(Xa - Xb, 2) + Math.Pow(Ya - Yb, 2) + Math.Pow(Za - Zb, 2)), 3);
+
+Console.WriteLine($"Результат {result}");
