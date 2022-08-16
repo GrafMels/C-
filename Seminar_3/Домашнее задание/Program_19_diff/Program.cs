@@ -5,21 +5,20 @@
 // 23432 -> да
 
 Console.Write("Введите зеркальное пятизначное число (число палиндром): ");
-int Number = Convert.ToInt32(Console.ReadLine());
-
-if (Number > 99999 || Number < 10000)
+string? Number = Console.ReadLine();
+if(Number?.Length < 5 || Number?.Length > 5)
 {
     Console.WriteLine("Не пятизначное");
     return;
 }
 
-if (Number / 10000 != Number % 10)
+if (Number?[0] != Number?[4])
 {
     Console.WriteLine("Не палиндром");
     return;
 }
 
-if ((Number % 10000) / 1000 != (Number % 100)/10)
+if (Number?[1] != Number?[3])
 {
     Console.WriteLine("Не палиндром");
     return;
