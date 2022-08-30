@@ -5,10 +5,10 @@
 // 8 4 2 4
 // Сумма элементов главной диагонали: 1+9+2 = 12
 
-Console.WriteLine("Введите колличество строк: ");
+Console.Write("Введите колличество строк: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите колличество столбцов: ");
+Console.Write("Введите колличество столбцов: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 
 // Заполнение массива двумерного
@@ -47,7 +47,7 @@ int SumMainDiagonal(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if(i==j) sumDiagonal += matrix[i, j];
+            if (i == j) sumDiagonal += matrix[i, j];
         }
     }
     return sumDiagonal;
