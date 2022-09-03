@@ -25,7 +25,7 @@ int[,] MakeRandArray(int rows, int columns)
 
 int FindMin(int[,] matrix, int rows, int columns)
 {
-    int min = 0;
+    int min = 2147483647;//Костыль!!!!!!!!!!!!!!!!!!!!!!!!!!!
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
@@ -39,7 +39,7 @@ int FindMin(int[,] matrix, int rows, int columns)
 void PrintArrayAndDeleteRowAndColumn(int[,] matrix, int m, int n, int min)
 {
     Console.WriteLine("\n\n");
-    if (min == -11567)
+    if (min == -2147483648)
     {
         for (int i = 0; i < m; i++)
         {
@@ -68,6 +68,7 @@ void PrintArrayAndDeleteRowAndColumn(int[,] matrix, int m, int n, int min)
         }
     firstMinFound:
     Console.WriteLine($"Min = {min}[{iMin}, {jMin}]");
+    Console.WriteLine();
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
@@ -81,7 +82,7 @@ void PrintArrayAndDeleteRowAndColumn(int[,] matrix, int m, int n, int min)
 }
 
 int[,] Array = MakeRandArray(rows, columns);
-PrintArrayAndDeleteRowAndColumn(Array, rows, columns, -11567);// число -11567 это костыль
+PrintArrayAndDeleteRowAndColumn(Array, rows, columns, -2147483648);// число -11567 это костыль
 int min = FindMin(Array, rows, columns);
 PrintArrayAndDeleteRowAndColumn(Array, rows, columns, min);
 
