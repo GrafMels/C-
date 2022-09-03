@@ -1,0 +1,1 @@
+﻿Console.WriteLine("AAAAAAAA \nAAAAAAAA \nAAAAAAAA \nAAAAAAAA \nAAAAAAAA");
