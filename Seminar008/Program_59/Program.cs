@@ -4,86 +4,43 @@
 
 Console.Clear();
 
-Console.Write("Введите колличество строк: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите колличество столбцов: ");
-int columns = Convert.ToInt32(Console.ReadLine());
-
-int[,] MakeRandArray(int rows, int columns)
+int rows = 10;
+int columns = 10;
+int[,] matrix = new int[rows, columns];
+int minElement = int.MaxValue;
+int minElementRow = 0; // Строчка с минимальным элементом
+int minElementColumn = 0;// Столбец с минимальным элементом
+for (int i = 0; i < matrix.GetLength(0); i++) // matrix.GetLength(0) = rows
 {
-    int[,] matrix = new int[rows, columns];
-    for (int i = 0; i < rows; i++)
+    for (int j = 0; j < columns; j++) // matrix.GetLength(1) = columns
     {
-        for (int j = 0; j < columns; j++)
+        matrix[i, j] = new Random().Next(10); // [0;10]
+        Console.Write(matrix[i, j] + "\t"); // Tab
+        if (minElement > matrix[i, j]) // 5 > 0 , min = 0
         {
-            matrix[i, j] = new Random().Next(10);
+            minElement = matrix[i, j];
+            minElementRow = i;
+            minElementColumn = j;
         }
     }
-    return matrix;
-}
-
-int FindMin(int[,] matrix, int rows, int columns)
-{
-    int min = 2147483647;//Костыль!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; j++)
-        {
-            if (matrix[i, j] < min) min = matrix[i, j];
-        }
-    }
-    return min;
-}
-
-void PrintArrayAndDeleteRowAndColumn(int[,] matrix, int m, int n, int min)
-{
-    Console.WriteLine("\n\n");
-    if (min == -2147483648)
-    {
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                Console.Write($"{matrix[i, j]}\t");
-            }
-            Console.WriteLine();
-        }
-    }
-    else
-    {
-        int iMin = 0;
-        int jMin = 0;
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if (min == matrix[i, j])
-                {
-                    iMin = i;
-                    jMin = j;
-                    goto firstMinFound;
-                }
-            }
-        }
-    firstMinFound:
-    Console.WriteLine($"Min = {min}[{iMin}, {jMin}]");
     Console.WriteLine();
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if (i != iMin
-                && j != jMin) Console.Write($"{matrix[i, j]}\t");
-            }
-            if (i != iMin) Console.WriteLine();
-        }
-    }
 }
 
-int[,] Array = MakeRandArray(rows, columns);
-PrintArrayAndDeleteRowAndColumn(Array, rows, columns, -2147483648);// число -11567 это костыль
-int min = FindMin(Array, rows, columns);
-PrintArrayAndDeleteRowAndColumn(Array, rows, columns, min);
+Console.WriteLine();
+Console.WriteLine($"Min = {minElement}, row: {minElementRow}, column: {minElementColumn} ");
+Console.WriteLine();
 
-
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+    if (minElementRow != i)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (minElementColumn != j)
+            {
+                Console.Write(matrix[i, j] + "\t");
+            }
+        }
+    }
+    Console.WriteLine();
+}
